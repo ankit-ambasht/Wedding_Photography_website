@@ -14,5 +14,5 @@ app.use(require("./route"));
 app.use(express.json());
 console.log("sidit Srivastava");
 app.listen(4000, () => {
-  console.log("sever runn in the localhost 4000");
+  console.log("sever run in the localhost 4000");
 });

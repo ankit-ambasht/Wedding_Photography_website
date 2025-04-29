@@ -1,16 +1,58 @@
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.14,
-* Autoprefixer: v10.4.7
-* Browsers: last 4 version
-*/
+.gallery-section {
+  background-color: #fff;
+  text-align: center;
+}
+
+.gallery-header h2 {
+  font-size: 40px;
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-family: 'Libre Baskerville';
+}
+
+.gallery-header p {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 75%;
+  margin: 20px auto 40px;
+ 
+}
+
+/* Grid layout */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 0 10px;
+}
+
+/* Image styling */
+.gallery-item {
+  width: 100%;
+  aspect-ratio: 3/4; /* Consistent height across all images */
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* Ensures the image fills the box without distortion */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
 
 .gallery-section {
   width: auto;
   height: auto;
   background-color: white;
   color: #b55467;
-  padding-top: 4.3rem;
 }
 .Gallery-image-section h1 {
   padding-top: 1.25rem;

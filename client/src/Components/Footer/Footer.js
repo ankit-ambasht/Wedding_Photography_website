@@ -1,21 +1,53 @@
 import React from "react";
 import "./Footer.css";
-import {Link} from 'react-router-dom';
+import logo from "../image/logo7.jpg"
+import { FaFacebookF, FaInstagram, FaTwitter, FaEnvelope } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <>
-    
-      <div className="footer-section">
-        <div className="socialmedia-links">
-          <Link to="https://instagram.com/nishchaysrivastavaphotography?igshid=MzRlODBiNWFlZA==" target="_blank"><i className="fa-brands fa-instagram"></i></Link>
-          <Link to="https://www.youtube.com/@NishchaySrivastavaPhotography" target="_blank"><i className="fa-brands fa-youtube"></i></Link>
-          <Link to="https://www.facebook.com/nishchaysrivastavaphotography?mibextid=ZbWKwL" target="_blank"><i className="fa-brands fa-facebook"></i></Link>
+    <footer className="main-footer">
+      <div className="footer-container">
+        {/* Logo */}
+        <div className="footer-logo">
+          <img src={logo} className="logo" alt="logo"/>
+          <p>Capturing timeless wedding stories with heart and soul.</p>
         </div>
-        <p className="copy-right">The Nishchay Srivastava Photography @ 2023</p>
-        <br></br>
+
+        {/* Navigation */}
+        <div className="footer-nav">
+          <h5>Navigation</h5>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        {/* Contact */}
+        <div className="footer-contact">
+          <h5>Contact Us</h5>
+          <p>Email: info@yourwebsite.com</p>
+          <p>Phone: +91-9876543210</p>
+          <p>Location: Mumbai, India</p>
+        </div>
+
+        {/* Social Icons */}
+        <div className="footer-social">
+          <h5>Follow Us</h5>
+          <div className="social-icons">
+            <a href="#"><FaFacebookF /></a>
+            <a href="#"><FaInstagram /></a>
+            <a href="#"><FaTwitter /></a>
+            <a href="mailto:info@yourwebsite.com"><FaEnvelope /></a>
+          </div>
+        </div>
       </div>
-    </>
+
+      <div className="footer-bottom">
+        <p>© 2025 Your Wedding Studio. All Rights Reserved.</p>
+      </div>
+    </footer>
   );
 };
 

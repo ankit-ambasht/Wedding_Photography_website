@@ -4,6 +4,7 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import axios from "axios";
 import Loader from "../Loader/Loader";
+import Gallery_image from "./Gallery_image";
 // import {INSTRAGRAM_ACCESS_KEY , INSTRAGRAM_TOKEN_KEY} from ''
 
 const Gallery = () => {
@@ -14,6 +15,7 @@ const Gallery = () => {
   const [show, setShow] = useState(false);
   const [model, setModel] = useState(false);
   const [temImg, setTemImg] = useState("");
+
 
 
   const getImg = (media_url) => {
@@ -31,7 +33,6 @@ const Gallery = () => {
   //   {media_url : "../image/firstImg.jpeg"},
   //   {media_url : "../image/firstImg.jpeg"},
   //   {media_url : "../image/firstImg.jpeg"},
-
 
   // ]
 
@@ -52,7 +53,6 @@ const Gallery = () => {
       .catch((err) => {
         // console.log(err.message);
         setError(err.message);
-
       });
     // window.addEventListener("scroll" , handelInfiniteScrolls)
     // return() => window.removeEventListener("scroll" , handelInfiniteScrolls)
@@ -81,6 +81,7 @@ const Gallery = () => {
   return (
     <>
       <Header />
+     \<Gallery_image />
       <div className="gallery-section">
         <div className="Gallery-image-section container">
           <hr></hr>
@@ -144,8 +145,7 @@ const Gallery = () => {
                                 />
                               </div>
                             )
-                          ) : null
-                          }
+                          ) : null}
                         </>
                       );
                     })
@@ -181,7 +181,7 @@ const Gallery = () => {
               </div>
             ) : (
               <Loader />
-            )}     
+            )}
           </>
         )}
         <br></br>

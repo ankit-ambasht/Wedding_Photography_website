@@ -3,54 +3,56 @@ import "./Home.css";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import Testimonial from "../Testimonial/Testimonial";
+import Gallery_image from "../Gallery/Gallery_image";
 
 const Home = () => {
   return (
     <>
       <Header />
       <div>
-        <div className=" home-section container-fluid">
-          <div className="welcome-note container">
-            <h1 className="con">Welcome</h1>
-            <div className="welcome-content">
-              <p>
-                Imagine waking up to a job that lifts you up and transports you
-                to a different world.
-              </p>
-              <p>
-                A world populated with a billion heartfelt feelings and stories
-                etched ceremoniously in magic, love and joie de vivre.
-              </p>
-              <p>
-                Perfect with its Disney-like happy endings, sworn vows and the
-                promises of forever. This is our world.
-              </p>
-              <p> The Wedding Story world!</p>
-            </div>
+        <section className="home-section">
+          <div className="youtube-wrapper">
+            <iframe
+              className="video"
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/5aUgkXSyTS8?autoplay=1&showinfo=0&rel=0&mute=1&controls=0&showinfo=0&modestbranding=1&loop=1&playlist=5aUgkXSyTS8"
+              title="YouTube video"
+              frameborder="0"
+              allow="autoplay; fullscreen"
+              allowfullscreen
+            ></iframe>
+
+            <div className="overlay-text"></div>
           </div>
-          <br></br>
-        </div>
+        </section>
       </div>
       <div className="second-home-section container-fluid">
-        <p>
-          " Love stories, fleeting yet timeless, weave the fabric of our lives. 
-        </p>
-        <p>In their embrace, time pauses, offering a glimpse of eternity in moments that redefine our existence. "</p>
-        <h6>- Nishchay Srivastava -</h6>
+        <div className="second-container">
+          <h1>Indian Wedding Photography & Films for the Modern Couple</h1>
+          <hr />
+          <p>
+            At Nichay Srivastav Photography, we specialize in capturing timeless
+            wedding moments with heart and artistry. From grand celebrations to
+            intimate vows, we tell your story through elegant, candid visuals
+            that last a lifetime.
+          </p>
+          <h6>- Nishchay Srivastava -</h6>
+        </div>
       </div>
+      <div className="home-gallery"> <Gallery_image /></div>
+      
       <div className="third-home-section container-fluid">
         <h5>What We Love ?</h5>
       </div>
       <div className="forth-home-section container-fluid">
         <p>
-          We are die-hard, hopeless romantics at heart and, photographers by
-          qualification.
+          "We're passionate storytellers and qualified photographers — hopeless
+          romantics at heart. Traveling across the world to capture the most
+          important day of your life isn't just our job, it's what we love.
+          Every wedding we shoot is a story we deeply care about — and we’re
+          honored to tell it through our lens."
         </p>
-        <p>
-          We love travelling all across the world to film the most important day
-          of your life. Narrating your wedding{" "}
-        </p>
-        <p>story through our lenses is a passion we all share as a team.</p>
       </div>
 
       <div className="fifth-home-section container-fluid">
@@ -59,12 +61,9 @@ const Home = () => {
 
       <div className="sixth-home-section container-fluid">
         <p>
-          We believe that marriages are a promise of forever, synonymous to
-          “…and they lived happily ever after.”
-        </p>
-        <p>
-          We are here to encapsulate your "happily ever after" onto the screen
-          just as magically as you had imagined.
+          "We believe every marriage is a timeless promise — a true ‘happily
+          ever after.’ Our passion is to capture that magic and turn your dreams
+          into cinematic memories that live on forever."
         </p>
       </div>
 
@@ -72,24 +71,23 @@ const Home = () => {
         <h5>What We Do ?</h5>
       </div>
       <div className="eight-home-section container-fluid">
+        <div className="eight-container">
+        <h4>We love destination weddings!</h4>
         <p>
-          We document handpicked elements and moments that are packed with love,
-          to render your wedding film as{" "}
+          You’re getting married. You’re looking for an Indian Wedding
+          Photographer in Delhi to shoot your dream wedding in your dream
+          destination. You and your partner have a beautiful story, and you need
+          someone to tell it? That’s where we come in. We are a Wedding
+          Photography studio based in New Delhi, and over the last 10 years have
+          shot hundreds of Indian Weddings all over the world including Goa,
+          Udaipur, Udaipur, Bangkok, Dubai, Abu Dhabi and beyond. Our wedding
+          stories are told using wedding photographs and moving images to create
+          something that’s fun, modern and timeless. Read more about us and what
+          we do in the link below!
         </p>
-        <p>illustrious as a contemporary cinematic record.</p>
-        <p>
-          The footage is edited meticulously to provide you with an everlasting
-          treasured testament of your dream
-        </p>
-        <p>
-          story. The ageless quality of our images complements the energy of our
-          films.
-        </p>
-
-        <hr></hr>
-        <br></br>
+        </div>
       </div>
-      <Testimonial/>
+          <div className="home-test"> <Testimonial /></div>
       <Footer />
     </>
   );

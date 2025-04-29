@@ -1,27 +1,76 @@
-.footer-section{
-    width: auto;
-    height: auto;
-    background-color: #b55467;
-    padding-top: 50px;
-    color: white;
-    
-}
-
-.socialmedia-links{
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    font-size: 25px;
-    color :white;
-}
-
-.socialmedia-links i{
-    margin-left: 30px;
-    color: white;
-}
-
-.copy-right{
-    padding-top: 25px;
+.main-footer {
+    background-color: #111;
+    color: #fff;
+    padding: 40px 20px 20px;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 50px;
+    max-width: 1200px;
+    margin: auto;
+    justify-items: center;
+  }
+  
+  .footer-logo h2 {
+    font-size: 24px;
+    color: #f9b234;
+  }
+  
+  .footer-logo p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #bbb;
+  }
+  
+  .footer-nav ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-nav ul li {
+    margin: 8px 0;
+  }
+  
+  .footer-nav ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .footer-nav ul li a:hover {
+    color: #f9b234;
+  }
+  
+  .footer-contact p {
+    font-size: 14px;
+    color: #ccc;
+    margin: 5px 0;
+    text-align: start;
+  }
+  
+  .footer-social .social-icons a {
+    color: #ccc;
+    margin-right: 15px;
+    font-size: 20px;
+    transition: color 0.3s;
+  }
+  
+  .footer-social .social-icons a:hover {
+    color: #f9b234;
+  }
+  
+  .footer-bottom {
     text-align: center;
-    font-family: "Dancing Script", cursive;
-}
+    margin-top: 30px;
+    border-top: 1px solid #333;
+    padding-top: 15px;
+    font-size: 14px;
+    color: #777;
+  }
+  .footer-bottom p{
+    text-align: center;
+  }
+  
