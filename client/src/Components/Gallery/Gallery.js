@@ -16,8 +16,6 @@ const Gallery = () => {
   const [model, setModel] = useState(false);
   const [temImg, setTemImg] = useState("");
 
-
-
   const getImg = (media_url) => {
     setTemImg(media_url);
     setModel(true);
@@ -81,10 +79,11 @@ const Gallery = () => {
   return (
     <>
       <Header />
-     \<Gallery_image />
-      <div className="gallery-section">
+      
+      <Gallery_image />
+      {/* <div className="gallery-section">
         <div className="Gallery-image-section container">
-          <hr></hr>
+          
           <h1>IMAGE.</h1>
           <hr style={{ backgroundColor: "#b55467" }}></hr>
         </div>
@@ -185,7 +184,7 @@ const Gallery = () => {
           </>
         )}
         <br></br>
-      </div>
+      </div> */}
       <Footer />
     </>
   );

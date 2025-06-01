@@ -1,6 +1,8 @@
 import React from "react";
 import "./Footer.css";
 import logo from "../image/logo7.jpg"
+import UploadImage from "../admin/UploadImage";
+import { Link } from "react-router-dom";
 import { FaFacebookF, FaInstagram, FaTwitter, FaEnvelope } from "react-icons/fa";
 
 const Footer = () => {
@@ -21,6 +23,7 @@ const Footer = () => {
             <li><a href="#gallery">Gallery</a></li>
             <li><a href="#about">About Us</a></li>
             <li><a href="#contact">Contact</a></li>
+            <Link to="/UploadImage" className="navbar-icon">uplode</Link>
           </ul>
         </div>
 

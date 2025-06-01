@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Head from "./Head";
 import './imageupload.css'
 
 const Uploadfaq = () => {
@@ -50,7 +49,6 @@ const Uploadfaq = () => {
 
   return (
     <>
-    <Head/>
     <br></br>
       <div className="faq-upload-section container">
         <h4> Upload Question and Answer !! </h4>

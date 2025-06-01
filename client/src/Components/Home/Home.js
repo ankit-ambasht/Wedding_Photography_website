@@ -4,9 +4,12 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import Testimonial from "../Testimonial/Testimonial";
 import Gallery_image from "../Gallery/Gallery_image";
+// import { useAuth } from "../../Context/AuthContext";
 
 const Home = () => {
+  // const { logout } = useAuth();
   return (
+
     <>
       <Header />
       <div>
@@ -40,7 +43,7 @@ const Home = () => {
           <h6>- Nishchay Srivastava -</h6>
         </div>
       </div>
-      <div className="home-gallery"> <Gallery_image /></div>
+      <div className="home-gallery -mt-16"> <Gallery_image /></div>
       
       <div className="third-home-section container-fluid">
         <h5>What We Love ?</h5>

@@ -1,81 +1,35 @@
-import React, { useState } from "react";
-import axios from "axios";
-// import Adminheader from "./Adminheader";
-import Head from "./Head";
-import './imageupload.css'
+import React, { useState } from 'react';
+import axios from 'axios';
+import AdminHeader from './AdminHeader';
 
-const UploadImage = () => {
-  const [imageUpload, setImageUpload] = useState("");
-  const [imagecategory, setImageCategory] = useState({
-    category: "",
-  });
+export default function AdminPanel() {
+  const [image, setImage] = useState(null);
 
-  let name, value;
-  const handleInput = (e) => {
-    name = e.target.name;
-    value = e.target.value;
-    setImageCategory({ ...imagecategory, [name]: value });
-  };
-
-  const handleImage = (e) => {
-    setImageUpload(e.target.files[0]);
-  }
-
-  const onSubmit = async (e) => {
-    e.preventDefault();
-    const { category } = imagecategory;
-    try {
-      if (!imageUpload || !category) {
-        alert("Please Provide the Iamge Correctly !! ");
-      } else {
-        const formData = new FormData();
-        formData.append("file", imageUpload);
-        formData.append("category", category);
-        axios.post("http://localhost:4000/upload", formData
-      
-          )
-          .then((res) => console.log(res))
-          .catch((err) => console.log(err));
-        
-          
-        console.log(imageUpload);
-        alert("successfully!!");
-        setImageUpload("");
-        setImageCategory({
-          category:""
-        })
-      }
-    } catch (err) {
-      console.log(err);
-    }
+  const handleUpload = async () => {
+    const formData = new FormData();
+    formData.append('image', image);
+    await axios.post('http://localhost:5000/upload', formData);
+    alert('Image uploaded!');
   };
 
   return (
     <>
-      <Head/>
-      <br></br>
-      <div className="image-upload-section container">
-        <h4>Upload Image</h4>
-        <div className="uploading-section">
-          <input type="file" name="file" onChange={handleImage} />
-          <label>Category :-</label>
-          <input
-            type="text"
-            placeholder="category"
-            name="category"
-            className="category_filed"
-            value={imagecategory.category}
-            onChange={handleInput}
-          />
-        </div>
-        <div>
-          <button className="btn bg-success" onClick={onSubmit}>
-            Submit
-          </button>
-        </div>
-      </div>
-    </>
-  );
-};
+    <AdminHeader />
+ <div className="min-h-screen bg-gradient-to-br from-purple-700 to-indigo-900 flex items-center justify-center p-4">
+      <div className="bg-white/10 backdrop-blur-md border border-white/30 p-8 rounded-2xl shadow-xl w-full max-w-sm">
+        <h2 className="text-2xl font-bold text-white mb-6 text-center">Upload Image</h2>
 
-export default UploadImage;
+        <input type="file" onChange={e => setImage(e.target.files[0])}
+         className="w-full px-4 py-2 rounded-xl bg-white/20 text-white placeholder-white/60 mb-4 focus:outline-none focus:ring-2 focus:ring-purple-400"
+        />
+
+        <button onClick={handleUpload}
+         className="w-full bg-purple-500 hover:bg-purple-600 text-white font-semibold py-2 rounded-xl transition"
+        >Upload</button>
+      </div>
+    </div>
+
+    </>
+   
+  );
+}

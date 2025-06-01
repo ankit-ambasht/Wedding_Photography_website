@@ -1,74 +1,58 @@
-import React , {useState} from "react";
-import Head from "./Head";
+// import React, { useState } from 'react';
+// import axios from 'axios';
+// import AdminHeader from './AdminHeader';
 
-const UploadVideo = () => {
+// export default function AdminUpload  () {
+//   const [youtubeUrl, setYoutubeUrl] = useState('');
+//   const [videoFile, setVideoFile] = useState(null);
 
-  const [youtube , setYoutube] = useState({
-    video :""
-  })
+//   const handleSubmit = async (e) => {
+//     e.preventDefault();
 
-  let name , value;
-  const handleInput = (e) => {
-  
-    name = e.target.name;
-    value = e.target.value;
-    setYoutube({...youtube , [name] : value});
-  }
-  const onSubmit = async (e) => {
-      e.preventDefault();
+//     const formData = new FormData();
+//     if (youtubeUrl) {
+//       formData.append('youtubeUrl', youtubeUrl);
+//     } else if (videoFile) {
+//       formData.append('video', videoFile);
+//     }
 
-      const {video} = youtube;
-      try{
-        if(!video){
-          alert("Please Provide the Video Link");
-        }else {
-          const res = await fetch("https://nishchayphotographyapi.onrender.com/videoupload" , {
-            method : "POST",
-            headers : {
-              "Content-Type" : "application/json"
-            },
-            body : JSON.stringify({
-              video
-            })
-          })
-          const videoData = res.json(res);
-          if(!videoData){
-            alert("Invalid data");
-          }else {
-              alert("You are Successfully Submit the video Link")
-              setYoutube({
-                video:""
-              })
-          }
-        }
-      }
-      catch(err) {
-        console.log(err);
-      }
-  }
+//     try {
+//       await axios.post('http://localhost:5000/upload-video', formData);
+//       alert('Video uploaded successfully!');
+//       setYoutubeUrl('');
+//       setVideoFile(null);
+//     } catch (err) {
+//       alert('Upload failed');
+//     }
+//   };
 
-  return (
-    <>
-    <Head/>
-    <br></br>
-      <div className="image-upload-section container">  
-        <h5>Upload the youtube Video Link !</h5>
-        <div className="uploading-section">
-          <input
-            tyep="text"
-            placeholder="Youtube video Link"
-            name="video"
-            onChange={handleInput}
-            value={youtube.video}
-          />
-        </div>
-        <br></br>
-        <button className="btn bg-success" onClick={onSubmit}>
-          Submit
-        </button>
-      </div>
-    </>
-  );
-};
+//   return (
+//     <>
+//     <AdminHeader />
+//     <div className="p-4 max-w-md mx-auto">
+//       <h2 className="text-xl font-bold mb-4">Upload Video</h2>
+//       <form onSubmit={handleSubmit} className="space-y-4">
+//         <input
+//           type="text"
+//           placeholder="YouTube Link"
+//           value={youtubeUrl}
+//           onChange={(e) => setYoutubeUrl(e.target.value)}
+//           className="w-full p-2 border"
+//         />
+//         <p className="text-center">OR</p>
+//         <input
+//           type="file"
+//           accept="video/*"
+//           onChange={(e) => setVideoFile(e.target.files[0])}
+//           className="w-full p-2 border"
+//         />
+//         <button type="submit" className="w-full bg-blue-500 text-white p-2 rounded">
+//           Upload
+//         </button>
+//       </form>
+//     </div>
+//     </>
+//   );
+// };
 
-export default UploadVideo;
+
